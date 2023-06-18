@@ -2,178 +2,180 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro lounge - smoke tabacaria</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro lounge - smoke tabacaria</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-    .header {
-      background-color: #007bff;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
 
-    .adicionar-mesa {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
+        .adicionar-mesa {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
 
-    .content {
-      padding: 20px;
-    }
+        .content {
+            padding: 20px;
+        }
 
-    .mesas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
+        .mesas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
 
-    .mesa {
-      border: 1px solid #ccc;
-      padding: 10px;
-      border-radius: 5px;
-      max-width: 300px;
-      width: 100%;
-      position: relative;
-      animation: borderPulse 2s infinite;
-    }
+        .mesa {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 300px;
+            width: 100%;
+            position: relative;
+            animation: borderPulse 2s infinite;
+        }
 
-    @keyframes borderPulse {
-      0% {
-        border-color: #ccc;
-      }
-      50% {
-        border-color: #00ff00;
-      }
-      100% {
-        border-color: #ccc;
-      }
-    }
+        @keyframes borderPulse {
+            0% {
+                border-color: #ccc;
+            }
 
-    .resumo {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+            50% {
+                border-color: #00ff00;
+            }
 
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      background-color: #007bff;
-      color: #fff;
-      cursor: pointer;
-    }
+            100% {
+                border-color: #ccc;
+            }
+        }
 
-    button:hover {
-      background-color: #0069d9;
-    }
+        .resumo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-    .mesa form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
 
-    .mesa form input[type="text"],
-    .mesa form textarea,
-    .mesa form select {
-      width: 100%;
-      padding: 5px;
-    }
+        button:hover {
+            background-color: #0069d9;
+        }
 
-    .mesa form button {
-      width: 100%;
-    }
+        .mesa form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
 
-    .relatorio {
-      background-color: #f5f5f5;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 20px;
-      margin-top: 20px;
-      text-align: center;
-    }
+        .mesa form input[type="text"],
+        .mesa form textarea,
+        .mesa form select {
+            width: 100%;
+            padding: 5px;
+        }
 
-    .relatorio h2 {
-      margin-top: 0;
-      font-size: 20px;
-    }
+        .mesa form button {
+            width: 100%;
+        }
 
-    .relatorio ul {
-      padding: 0;
-      list-style-type: none;
-    }
+        .relatorio {
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
 
-    .relatorio li {
-      margin-bottom: 20px;
-    }
+        .relatorio h2 {
+            margin-top: 0;
+            font-size: 20px;
+        }
 
-    .relatorio strong {
-      font-weight: bold;
-    }
+        .relatorio ul {
+            padding: 0;
+            list-style-type: none;
+        }
 
-    .relatorio:not(:last-child) {
-      margin-bottom: 10px;
-    }
+        .relatorio li {
+            margin-bottom: 20px;
+        }
 
-    .limpar-relatorio {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-  </style>
+        .relatorio strong {
+            font-weight: bold;
+        }
+
+        .relatorio:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .limpar-relatorio {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="header">
-    <h1>Registro de consumo no lounge - Tabacaria Smoke</h1>
-  </div>
-
-  <div class="content">
-    <div class="adicionar-mesa">
-      <button id="adicionarMesaButton" onclick="abrirMesa()">Adicionar Mesa</button>
-      <button id="limparRelatorioButton" onclick="limparRelatorio()">Limpar Relatório</button>
+    <div class="header">
+        <h1>Registro de consumo no lounge - Tabacaria Smoke</h1>
     </div>
 
-    <div class="mesas" id="mesas">
-      <!-- Aqui você pode adicionar mais mesas -->
+    <div class="content">
+        <div class="adicionar-mesa">
+            <button id="adicionarMesaButton" onclick="abrirMesa()">Adicionar Mesa</button>
+            <button id="limparRelatorioButton" onclick="limparRelatorio()">Limpar Relatório</button>
+        </div>
+
+        <div class="mesas" id="mesas">
+            <!-- Aqui você pode adicionar mais mesas -->
+        </div>
+
+        <div class="resumo">
+            <h2>Resumo Diário</h2>
+            <p>Total de Mesas Abertas: <span id="totalMesas">0</span></p>
+            <p>Total Ganho no Dia: R$ <span id="totalGanho">0.00</span></p>
+        </div>
+
+        <div id="relatorio" class="relatorio"></div>
     </div>
 
-    <div class="resumo">
-      <h2>Resumo Diário</h2>
-      <p>Total de Mesas Abertas: <span id="totalMesas">0</span></p>
-      <p>Total Ganho no Dia: R$ <span id="totalGanho">0.00</span></p>
-    </div>
+    <script>
+        let mesas = [];
+        let totalGanho = 0;
+        let relatorioArray = [];
 
-    <div id="relatorio" class="relatorio"></div>
-  </div>
+        function abrirMesa() {
+            const mesaElement = document.createElement('div');
+            mesaElement.classList.add('mesa');
 
-  <script>
-    let mesas = [];
-    let totalGanho = 0;
-    let relatorioArray = [];
-
-    function abrirMesa() {
-      const mesaElement = document.createElement('div');
-      mesaElement.classList.add('mesa');
-
-      const mesaNumero = mesas.length + 1;
-      mesaElement.innerHTML = `
+            const mesaNumero = mesas.length + 1;
+            mesaElement.innerHTML = `
         <h2>Mesa ${mesaNumero}</h2>
         <form>
           <input type="text" name="cliente" placeholder="Nome cliente">
@@ -189,52 +191,74 @@
         </form>
       `;
 
-      mesas.push({
-        elemento: mesaElement,
-        valorTotal: 0
-      });
-      document.getElementById('mesas').appendChild(mesaElement);
-      atualizarResumoDiario();
-    }
+            mesas.push({
+                elemento: mesaElement,
+                valorTotal: 0
+            });
+            document.getElementById('mesas').appendChild(mesaElement);
+            atualizarResumoDiario();
+        }
 
-    function fecharMesa(index) {
-      const mesa = mesas[index];
-      const cliente = mesa.elemento.querySelector('input[name="cliente"]').value;
-      const produtos = mesa.elemento.querySelector('textarea[name="produtos"]').value;
-      const valorTotal = parseFloat(mesa.elemento.querySelector('input[name="valor"]').value);
-      const formaPagamento = mesa.elemento.querySelector('select[name="formaPagamento"]').value;
+        function fecharMesa(index) {
+            const mesa = mesas[index];
 
-      if (cliente.trim() === '' || produtos.trim() === '' || isNaN(valorTotal) || formaPagamento === '') {
-        alert('Por favor, preencha todos os campos antes de fechar a mesa.');
-        return;
-      }
+            if (!mesa || !mesa.hasOwnProperty('elemento')) {
+                console.error('A mesa não existe ou a propriedade "elemento" está ausente.');
+                return;
+            }
 
-      const relatorio = {
-        mesa: index + 1,
-        cliente,
-        produtos,
-        valorTotal,
-        formaPagamento
-      };
+            const cliente = mesa.elemento.querySelector('input[name="cliente"]').value;
+            const produtos = mesa.elemento.querySelector('textarea[name="produtos"]').value;
+            const valorTotal = parseFloat(mesa.elemento.querySelector('input[name="valor"]').value);
 
-      adicionarRelatorio(relatorio);
+            if (cliente.trim() === '' || produtos.trim() === '' || isNaN(valorTotal)) {
+                alert('Por favor, preencha todos os campos antes de fechar a mesa.');
+                return;
+            }
 
-      mesa.valorTotal = valorTotal;
-      mesa.elemento.remove();
-      mesas.splice(index, 1);
-      atualizarResumoDiario();
-      atualizarTotalGanho();
-    }
+            const formaPagamento = mesa.elemento.querySelector('select[name="formaPagamento"]').value;
 
-    function adicionarRelatorio(relatorio) {
-      relatorioArray.push(relatorio);
-      const relatorioElement = document.getElementById('relatorio');
-      relatorioElement.innerHTML = `
+            totalGanho += valorTotal;
+
+            const relatorio = {
+                mesa: index + 1,
+                cliente,
+                produtos,
+                valorTotal,
+                formaPagamento
+            };
+
+            adicionarRelatorio(relatorio);
+
+            mesa.valorTotal = valorTotal;
+
+            mesa.elemento.remove();
+            mesas.splice(index, 1); // Remover a mesa do array mesas
+
+            // Atualizar o índice das mesas restantes
+            for (let i = index; i < mesas.length; i++) {
+                const mesaElemento = mesas[i].elemento;
+                mesaElemento.querySelector('h2').textContent = `Mesa ${i + 1}`;
+                mesaElemento.querySelector('button').setAttribute('onclick', `fecharMesa(${i})`);
+            }
+
+            atualizarResumoDiario();
+            atualizarTotalGanho();
+        }
+
+
+
+
+
+        function adicionarRelatorio(relatorio) {
+            relatorioArray.push(relatorio);
+            const relatorioElement = document.getElementById('relatorio');
+            relatorioElement.innerHTML = `
         <h2>Relatório de Mesas Fechadas</h2>
         <ul>
           ${relatorioArray
-            .map(
-              relatorio => `
+                    .map(
+                        relatorio => `
                 <li>
                   <strong>Mesa:</strong> ${relatorio.mesa}<br>
                   <strong>Cliente:</strong> ${relatorio.cliente}<br>
@@ -243,58 +267,65 @@
                   <strong>Forma de Pagamento:</strong> ${relatorio.formaPagamento}
                 </li>
               `
-            )
-            .join('')}
+                    )
+                    .join('')}
         </ul>
       `;
-    }
+        }
 
-    function atualizarResumoDiario() {
-      const totalMesas = mesas.length;
-      document.getElementById('totalMesas').textContent = totalMesas.toString();
-    }
+        function atualizarResumoDiario() {
+            const totalMesas = mesas.length;
+            document.getElementById('totalMesas').textContent = totalMesas.toString();
+        }
 
-    function atualizarTotalGanho() {
-      const novoTotalGanho = mesas.reduce((total, mesa) => total + mesa.valorTotal, 0);
-      totalGanho = novoTotalGanho;
-      document.getElementById('totalGanho').textContent = totalGanho.toFixed(2).toString();
-    }
+        function atualizarTotalGanho() {
+            const novoTotalGanho = relatorioArray.reduce((total, relatorio) => total + relatorio.valorTotal, 0);
 
-    function limparRelatorio() {
-      relatorioArray = [];
-      document.getElementById('relatorio').innerHTML = '';
-    }
+            totalGanho = novoTotalGanho;
+            document.getElementById('totalGanho').textContent = novoTotalGanho.toFixed(2).toString();
 
-    function salvarDadosLocalStorage() {
-      localStorage.setItem('mesas', JSON.stringify(mesas));
-      localStorage.setItem('relatorioArray', JSON.stringify(relatorioArray));
-      localStorage.setItem('totalGanho', totalGanho.toString());
-    }
+        }
 
-    function recuperarDadosLocalStorage() {
-      const mesasData = localStorage.getItem('mesas');
-      const relatorioData = localStorage.getItem('relatorioArray');
-      const totalGanhoData = localStorage.getItem('totalGanho');
+        function limparRelatorio() {
+            relatorioArray = [];
+            totalGanho = 0; // Redefinir o valor do Total Ganho para zero
+            document.getElementById('relatorio').innerHTML = '';
+            document.getElementById('totalGanho').textContent = '0.00'; // Atualizar a exibição do Total Ganho
+            atualizarResumoDiario();
+            mesas = []; // Zerar o array mesas
+        }
 
-      if (mesasData && relatorioData && totalGanhoData) {
-        mesas = JSON.parse(mesasData);
-        relatorioArray = JSON.parse(relatorioData);
-        totalGanho = parseFloat(totalGanhoData);
-      }
+        function salvarDadosLocalStorage() {
+            localStorage.setItem('mesas', JSON.stringify(mesas));
+            localStorage.setItem('relatorioArray', JSON.stringify(relatorioArray));
+            localStorage.setItem('totalGanho', totalGanho.toString());
+        }
 
-      atualizarResumoDiario();
-      atualizarTotalGanho();
-      exibirRelatorioSalvo();
-    }
+        function recuperarDadosLocalStorage() {
+            const mesasData = localStorage.getItem('mesas');
+            const relatorioData = localStorage.getItem('relatorioArray');
+            const totalGanhoData = localStorage.getItem('totalGanho');
 
-    function exibirRelatorioSalvo() {
-      const relatorioElement = document.getElementById('relatorio');
-      relatorioElement.innerHTML = `
+            if (mesasData && relatorioData && totalGanhoData) {
+                mesas = JSON.parse(mesasData);
+                relatorioArray = JSON.parse(relatorioData);
+                totalGanho = parseFloat(totalGanhoData);
+            }
+
+            atualizarResumoDiario();
+            atualizarTotalGanho();
+            exibirRelatorioSalvo();
+            document.getElementById('totalGanho').textContent = totalGanho.toFixed(2).toString(); // Exibir o valor recuperado do Total Ganho
+        }
+
+        function exibirRelatorioSalvo() {
+            const relatorioElement = document.getElementById('relatorio');
+            relatorioElement.innerHTML = `
         <h2>Relatório de Mesas Fechadas</h2>
         <ul>
           ${relatorioArray
-            .map(
-              relatorio => `
+                    .map(
+                        relatorio => `
                 <li>
                   <strong>Mesa:</strong> ${relatorio.mesa}<br>
                   <strong>Cliente:</strong> ${relatorio.cliente}<br>
@@ -303,20 +334,20 @@
                   <strong>Forma de Pagamento:</strong> ${relatorio.formaPagamento}
                 </li>
               `
-            )
-            .join('')}
+                    )
+                    .join('')}
         </ul>
       `;
-    }
+        }
 
-    window.addEventListener('load', () => {
-      recuperarDadosLocalStorage();
-    });
+        window.addEventListener('load', () => {
+            recuperarDadosLocalStorage();
+        });
 
-    window.addEventListener('beforeunload', () => {
-      salvarDadosLocalStorage();
-    });
-  </script>
+        window.addEventListener('beforeunload', () => {
+            salvarDadosLocalStorage();
+        });
+    </script>
 </body>
 
 </html>
