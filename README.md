@@ -10,4 +10,3 @@ O resumo diário exibe o total de mesas abertas e o valor total ganho no dia at�
 
 O projeto utiliza JavaScript para manipular o DOM e armazenar os dados localmente utilizando o recurso de LocalStorage do navegador. Dessa forma, os dados são preservados mesmo após recarregar a página ou fechar o navegador.
 
-Esse código pode ser adicionado a um repositório no GitHub, juntamente com uma descrição explicando sua funcionalidade e fornecendo instruções sobre como executar e contribuir para o projeto.
