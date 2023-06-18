@@ -287,12 +287,23 @@
         }
 
         function limparRelatorio() {
-            relatorioArray = [];
-            totalGanho = 0; // Redefinir o valor do Total Ganho para zero
-            document.getElementById('relatorio').innerHTML = '';
-            document.getElementById('totalGanho').textContent = '0.00'; // Atualizar a exibição do Total Ganho
-            atualizarResumoDiario();
-            mesas = []; // Zerar o array mesas
+            var resposta = prompt("Deseja realmente limpar o relatório ? 'sim' ou 'não':");
+
+            if (resposta.toLowerCase() === "sim") {
+                relatorioArray = [];
+                totalGanho = 0; // Redefinir o valor do Total Ganho para zero
+                document.getElementById('relatorio').innerHTML = '';
+                document.getElementById('totalGanho').textContent = '0.00'; // Atualizar a exibição do Total Ganho
+                atualizarResumoDiario();
+                mesas = []; // Zerar o array mesas
+            } else if (resposta.toLowerCase() === "não") {
+                // Ação para a resposta 'não'
+                console.log("Executando ação Y.");
+            } else {
+                // Ação caso a resposta seja inválida
+                console.log("Resposta inválida. Por favor, digite 'sim' ou 'não'.");
+            }
+
         }
 
         function salvarDadosLocalStorage() {
